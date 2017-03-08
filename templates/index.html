@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+    <body>
+        <h1>Content-based image search engine</h1>
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="query_img"><br>
+            <input type="submit">
+        </form>
+        <hr>
+        <h2>Query:</h2>
+        {% if query_path %}
+        <img src="{{ query_path }}" width="300px">
+        {% endif %}
+        <hr>
+        <h2>Results:</h2>
+        {% for score in scores %}
+        <figure style="float: left;">
+            <img src="{{ score[1] }}" height="200px">
+            <figcaption>{{ score[0] }}</figcaption>
+        </figure>
+        {% endfor %}
+
+
+    </body>
+</html>
+
+
