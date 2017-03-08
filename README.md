@@ -1,15 +1,12 @@
 # nanosearch
 
 ## Overview
-*nanosearch* is an extremely simple image-based image search engine using Kelas + Flask.
+*nanosearch* is an extremely simple image-based image search engine using Keras + Flask.
 Given a set of images, a 4096D fc6-feature is extracted for each image using a pre-trained VGG16 network (`offline.py`).
 Given a query image via a Flask web-intereface, similar images are retrieved by the simple nearest neighbor search (`server.py`).
 
-## Setup
+## Requirement
 ```bash
-git clone https://github.com/matsui528/nanosearch.git
-cd nanosearch
-mkdir -p static/feature static/img static/uploaded
 pip3 install numpy Pillow h5py tensorflow Keras Flask 
 ```
 
