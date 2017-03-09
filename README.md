@@ -1,9 +1,10 @@
-# nanosearch
+# Sis: simple image search engine
 
 ## Overview
-*nanosearch* is an extremely simple image-based image search engine using Keras + Flask.
-Given a set of images, a 4096D fc6-feature is extracted for each image using a pre-trained VGG16 network (`offline.py`).
-Given a query image via a Flask web-intereface, similar images are retrieved by the simple nearest neighbor search (`server.py`).
+- *sis* is a simple image-based image search engine using Keras + Flask.
+- Given a set of images, a 4096D fc6-feature is extracted for each image using a pre-trained VGG16 network (`offline.py`).
+- Given a query image via a Flask web-intereface, similar images are retrieved by the simple nearest neighbor search (`server.py`).
+- On an aws-ec2 instance with t2.large, the feature extraction takes 0.9 s per image. The search for 100 images takes 0.002 s.
 
 ## Requirement
 ```bash
