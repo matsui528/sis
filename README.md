@@ -10,20 +10,46 @@
 
 ## Requirements
 ```bash
-pip3 install numpy Pillow h5py tensorflow Keras Flask 
+pip install numpy Pillow h5py tensorflow Keras Flask   # python3
 ```
 
-## How to run
-
-### Offline step: feature extraction
+## How to run (on your local computer)
 ```bash
+# Make sure numpy, Pillow, h5py, tensorflow, Keras, and Flask are installed
+# Clone the code
+$ git clone https://github.com/matsui528/sis.git
+$ cd sis
+
 # Put your image files (*.jpg) on static/img
-python3 offline.py
+
+$ python offline.py    # python3
 # Then fc6 features are extracted and saved on static/feature
+
+$ python server.py
+# Now you can do search via localhost:5000
 ```
 
-### Online step: search
+## How to run (on AWS EC2)
 ```bash
-python3 server.py
-# Now you can do search via localhost:5000
+# Launch an instance on AWS EC2, and open the port 5000.
+# A middle-level CPU instance is fine, e.g., m4.large.
+# Make sure you can ssh. Then log in the instance.
+
+# Setup python stuff
+$ wget https://repo.continuum.io/archive/Anaconda3-4.3.0-Linux-x86_64.sh
+$ bash Anaconda3-4.3.0-Linux-x86_64.sh
+$ source ~/.bashrc  # Activate anaconda
+$ pip install tensorflow keras
+
+# Clone the code
+$ git clone https://github.com/matsui528/sis.git
+$ cd sis
+
+# Put your image files (*.jpg) on static/img
+
+$ python offline.py
+# Then fc6 features are extracted and saved on static/feature
+
+$ python server.py
+# Now you can do search via http://ec2-XX-XX-XXX-XXX.us-west-2.compute.amazonaws.com:5000
 ```
