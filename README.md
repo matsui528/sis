@@ -10,7 +10,7 @@
 
 ## Requirements
 ```bash
-pip install numpy Pillow h5py tensorflow Keras Flask   # python3
+$ pip install numpy Pillow h5py tensorflow Keras Flask   # python3
 ```
 
 ## How to run (on your local computer)
