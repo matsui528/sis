@@ -5,7 +5,7 @@
 - Given a set of images, a 4096D fc6-feature is extracted for each image using a pre-trained VGG16 network (`offline.py`).
 - Given a query image via a Flask web-intereface, similar images are retrieved by the simple nearest neighbor search (`server.py`).
 - On an aws-ec2 instance with t2.large, the feature extraction takes 0.9 s per image. The search for 1000 images takes 10 ms.
-- [Project page](https://www.hal.t.u-tokyo.ac.jp/~matsui/project/sis/sis.html)
+- [Project page](http://yusukematsui.me/project/sis/sis.html)
 - [Demo](http://www.simple-image-search.xyz/)
 
 ## Requirements
