@@ -7,7 +7,7 @@ import numpy as np
 class FeatureExtractor:
     def __init__(self):
         base_model = VGG16(weights='imagenet')
-        self.model = Model(input=base_model.input, output=base_model.get_layer('fc1').output)
+        self.model = Model(inputs=base_model.input, outputs=base_model.get_layer('fc1').output)
 
     def extract(self, img):
         img = img.resize((224, 224))  # VGG must take a 224x224 img as an input
