@@ -1,5 +1,7 @@
 # Sis: simple image search engine
 
+![](http://yusukematsui.me/project/sis/img/overview.jpg)
+
 ## Overview
 - *sis* is a simple image-based image search engine using Keras + Flask.
 - Given a set of images, a 4096D fc6-feature is extracted for each image using a pre-trained VGG16 network (`offline.py`).
