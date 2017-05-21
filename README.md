@@ -1,4 +1,4 @@
-# Sis: simple image search engine
+# Sis: Simple Image Search Engine
 
 ![](http://yusukematsui.me/project/sis/img/overview.jpg)
 
@@ -55,3 +55,11 @@ $ python offline.py
 $ python server.py
 # Now you can do search via http://ec2-XX-XX-XXX-XXX.us-west-2.compute.amazonaws.com:5000
 ```
+
+## Citation
+
+    @misc{sis,
+	    author = {Yusuke Matsui},
+	    title = {Sis: Simple Image Search Engine},
+	    howpublished = {\url{https://github.com/matsui528/sis}}
+    }
