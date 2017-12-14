@@ -9,11 +9,11 @@
 - `offline.py`: This script extracts deep features from images. Given a set of database images, a 4096D fc6-feature is extracted for each image using the VGG16 network with ImageNet pre-trained weights.
 - `server.py`: This script runs a web-server. You can send your query image to the server via a Flask web-intereface. Then relevant images to the query are retrieved by the simple nearest neighbor search.
 - On an aws-ec2 instance with t2.large, the feature extraction takes 0.9 s per image. The search for 1000 images takes 10 ms.
-- We tested the system on Ubuntu 16.04 with Python3.
+- We tested Sis on Ubuntu 16.04 with Python3.
 
 ## Links
-- [Project page](http://yusukematsui.me/project/sis/sis.html)
 - [Demo](http://www.simple-image-search.xyz/)
+- [Project page](http://yusukematsui.me/project/sis/sis.html)
 
 ## Usage
 ```bash
@@ -32,7 +32,7 @@ $ python server.py
 # Now you can do the search via localhost:5000
 ```
 ## Launch on AWS EC2
-- You can easily launch the server on AWS EC2. Note that the following configuration is just for the demo purpose, which would not be secure.
+- You can easily launch Sis on AWS EC2. Note that the following configuration is just for the demo purpose, which would not be secure.
 - To run the server on AWS, please first open the port 5000 and launch an EC2 instance. Note that you can create a security group such that port 5000 is opened.
 - A middle-level CPU instance is fine, e.g., m4.large.
 - After you log in the instance by ssh, the easist way to setup the environment is to use anaconda:
