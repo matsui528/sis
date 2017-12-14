@@ -1,8 +1,8 @@
 # Sis: Simple Image Search Engine
 
-Workflow | [Demo](http://www.simple-image-search.xyz/)
+[Demo](http://www.simple-image-search.xyz/) | Workflow
 :---:|:---:
-![](http://yusukematsui.me/project/sis/img/overview.jpg)|![](http://yusukematsui.me/project/sis/img/screencapture.jpg)
+![](http://yusukematsui.me/project/sis/img/screencapture.jpg)|![](http://yusukematsui.me/project/sis/img/overview.jpg)
 
 ## Overview
 - *Sis* is a simple image-based image search engine using Keras + Flask. You can launch the search engine just by running two python scripts.
