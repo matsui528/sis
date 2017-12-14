@@ -4,9 +4,7 @@ from PIL import Image
 from feature_extractor import FeatureExtractor
 import glob
 import pickle
-
 from datetime import datetime
-
 from flask import Flask, request, render_template
 
 app = Flask(__name__)
@@ -30,14 +28,13 @@ def index():
         img.save(uploaded_img_path)
 
         query = fe.extract(img)
-        dist = np.linalg.norm(features - query, axis=1)  # Do search
-        ids = np.argsort(dist)[:30]
-        dist = [dist[id] for id in ids]
-        retrieved_img_paths = [img_paths[id] for id in ids]
+        dists = np.linalg.norm(features - query, axis=1)  # Do search
+        ids = np.argsort(dists)[:30] # Top 30 results
+        scores = [(dists[id], img_paths[id]) for id in ids]
 
         return render_template('index.html',
                                query_path=uploaded_img_path,
-                               scores=zip(dist, retrieved_img_paths))
+                               scores=scores)
     else:
         return render_template('index.html')
 

@@ -9,7 +9,7 @@ class FeatureExtractor:
         base_model = VGG16(weights='imagenet')
         self.model = Model(inputs=base_model.input, outputs=base_model.get_layer('fc1').output)
 
-    def extract(self, img):
+    def extract(self, img):  # img is from PIL.Image.open(path) or keras.preprocessing.image.load_img(path)
         img = img.resize((224, 224))  # VGG must take a 224x224 img as an input
         img = img.convert('RGB')  # Make sure img is color
         x = image.img_to_array(img)  # To np.array. Height x Width x Channel. dtype=float32

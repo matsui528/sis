@@ -1,51 +1,26 @@
 # Sis: Simple Image Search Engine
 
-![](http://yusukematsui.me/project/sis/img/overview.jpg)
+Workflow | [Demo](http://www.simple-image-search.xyz/)
+:---:|:---:
+![](http://yusukematsui.me/project/sis/img/overview.jpg)|![](http://yusukematsui.me/project/sis/img/screencapture.jpg)
 
 ## Overview
-- *sis* is a simple image-based image search engine using Keras + Flask.
-- Given a set of images, a 4096D fc6-feature is extracted for each image using a pre-trained VGG16 network (`offline.py`).
-- Given a query image via a Flask web-intereface, similar images are retrieved by the simple nearest neighbor search (`server.py`).
+- *Sis* is a simple image-based image search engine using Keras + Flask. You can launch the search engine just by running two python scripts.
+- `offline.py`: This script extracts deep features from images. Given a set of database images, a 4096D fc6-feature is extracted for each image using the VGG16 network with ImageNet pre-trained weights.
+- `server.py`: This script runs a web-server. You can send your query image to the server via a Flask web-intereface. Then relevant images to the query are retrieved by the simple nearest neighbor search.
 - On an aws-ec2 instance with t2.large, the feature extraction takes 0.9 s per image. The search for 1000 images takes 10 ms.
+- We tested the system on Ubuntu 16.04 with Python3.
+
+## Links
 - [Project page](http://yusukematsui.me/project/sis/sis.html)
 - [Demo](http://www.simple-image-search.xyz/)
 
-## Requirements
+## How to run
 ```bash
-$ pip install numpy Pillow h5py tensorflow Keras Flask   # python3
-```
-
-## How to run (on your local computer)
-```bash
-# Make sure numpy, Pillow, h5py, tensorflow, Keras, and Flask are installed
-# Clone the code
+# Clone the code and install libraries
 $ git clone https://github.com/matsui528/sis.git
 $ cd sis
-
-# Put your image files (*.jpg) on static/img
-
-$ python offline.py    # python3
-# Then fc6 features are extracted and saved on static/feature
-
-$ python server.py
-# Now you can do search via localhost:5000
-```
-
-## How to run (on AWS EC2)
-```bash
-# Launch an instance on AWS EC2, and open the port 5000.
-# A middle-level CPU instance is fine, e.g., m4.large.
-# Make sure you can ssh. Then log in the instance.
-
-# Setup python stuff
-$ wget https://repo.continuum.io/archive/Anaconda3-4.3.0-Linux-x86_64.sh
-$ bash Anaconda3-4.3.0-Linux-x86_64.sh
-$ source ~/.bashrc  # Activate anaconda
-$ pip install tensorflow keras
-
-# Clone the code
-$ git clone https://github.com/matsui528/sis.git
-$ cd sis
+$ pip install -r requirements.txt
 
 # Put your image files (*.jpg) on static/img
 
@@ -53,8 +28,14 @@ $ python offline.py
 # Then fc6 features are extracted and saved on static/feature
 
 $ python server.py
-# Now you can do search via http://ec2-XX-XX-XXX-XXX.us-west-2.compute.amazonaws.com:5000
+# Now you can do the search via localhost:5000
 ```
+## Launch on AWS EC2
+- To run the server on AWS, please first launch an EC2 instance and open the port 5000.
+- A middle-level CPU instance is fine, e.g., m4.large.
+- After you log in the instance by ssh, please run the command above.
+- After you run `$ python server.py`, you can access the system via `http://ec2-XX-XX-XXX-XXX.us-west-2.compute.amazonaws.com:5000`
+
 
 ## Citation
 
