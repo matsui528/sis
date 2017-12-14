@@ -15,7 +15,7 @@
 - [Project page](http://yusukematsui.me/project/sis/sis.html)
 - [Demo](http://www.simple-image-search.xyz/)
 
-## How to run
+## Usage
 ```bash
 # Clone the code and install libraries
 $ git clone https://github.com/matsui528/sis.git
@@ -26,16 +26,29 @@ $ pip install -r requirements.txt
 
 $ python offline.py
 # Then fc6 features are extracted and saved on static/feature
+# Note that it takes time for the first time because Keras downloads the VGG weights.
 
 $ python server.py
 # Now you can do the search via localhost:5000
 ```
 ## Launch on AWS EC2
-- To run the server on AWS, please first launch an EC2 instance and open the port 5000.
+- You can easily launch the server on AWS EC2. Note that the following configuration is just for the demo purpose, which would not be secure.
+- To run the server on AWS, please first open the port 5000 and launch an EC2 instance. Note that you can create a security group such that port 5000 is opened.
 - A middle-level CPU instance is fine, e.g., m4.large.
-- After you log in the instance by ssh, please run the command above.
+- After you log in the instance by ssh, the easist way to setup the environment is to use anaconda:
+```bash
+$ wget https://repo.continuum.io/archive/Anaconda3-5.0.1-Linux-x86_64.sh
+$ bash Anaconda3-5.0.1-Linux-x86_64.sh # Say yes for all settings
+$ source ~/.bashrc  # Activate anaconda
+```
+- Then let's run the commands in the above usage section.
 - After you run `$ python server.py`, you can access the system via `http://ec2-XX-XX-XXX-XXX.us-west-2.compute.amazonaws.com:5000`
+- (Advanced) If you'd like to deploy the system properly, please consider to run the Sis with the usual web server, e.g., uWSGI + nginx.
 
+## Todo
+- Approximate nearest neighbor search
+- Performance evaluation on a GPU instance
+- Deploy with uWSGI + nginx
 
 ## Citation
 
