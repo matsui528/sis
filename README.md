@@ -1,8 +1,10 @@
 # Sis: Simple Image Search Engine
 
-[Demo](http://www.simple-image-search.xyz/) | Workflow
-:---:|:---:
-![](http://yusukematsui.me/project/sis/img/screencapture.jpg)|![](http://yusukematsui.me/project/sis/img/overview.jpg)
+## [Demo](http://www.simple-image-search.xyz/)
+![](http://yusukematsui.me/project/sis/img/screencapture.jpg)
+
+## Wrokflow
+![](http://yusukematsui.me/project/sis/img/overview.jpg)
 
 ## Overview
 - *Sis* is a simple image-based image search engine using Keras + Flask. You can launch the search engine just by running two python scripts.
@@ -45,10 +47,7 @@ $ source ~/.bashrc  # Activate anaconda
 - After you run `$ python server.py`, you can access the system via `http://ec2-XX-XX-XXX-XXX.us-west-2.compute.amazonaws.com:5000`
 - (Advanced) If you'd like to deploy the system properly, please consider to run the Sis with the usual web server, e.g., uWSGI + nginx.
 
-## Todo
-- Approximate nearest neighbor search
-- Performance evaluation on a GPU instance
-- Deploy with uWSGI + nginx
+
 
 ## Citation
 
