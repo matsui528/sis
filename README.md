@@ -3,7 +3,7 @@
 ## [Demo](http://www.simple-image-search.xyz/)
 ![](http://yusukematsui.me/project/sis/img/screencapture2.jpg)
 
-## Wrokflow
+## Workflow
 ![](http://yusukematsui.me/project/sis/img/overview.jpg)
 
 ## Overview
