@@ -33,15 +33,16 @@ $ python server.py
 # Now you can do the search via localhost:5000
 ```
 ## Launch on AWS EC2
-- You can easily launch Sis on AWS EC2. Note that the following configuration is just for the demo purpose, which would not be secure.
+- You can easily launch Sis on AWS EC2 as follows. Note that the following configuration is just for the demo purpose, which would not be secure.
 - To run the server on AWS, please first open the port 5000 and launch an EC2 instance. Note that you can create a security group such that port 5000 is opened.
-- A middle-level CPU instance is fine, e.g., m4.large.
+- A middle-level CPU instance is fine, e.g., m5.large.
 - After you log in the instance by ssh, the easist way to setup the environment is to use anaconda:
 ```bash
-$ wget https://repo.continuum.io/archive/Anaconda3-5.0.1-Linux-x86_64.sh
-$ bash Anaconda3-5.0.1-Linux-x86_64.sh # Say yes for all settings
+$ wget https://repo.anaconda.com/archive/Anaconda3-5.3.1-Linux-x86_64.sh
+$ bash Anaconda3-5.3.1-Linux-x86_64.sh # Say yes for all settings
 $ source ~/.bashrc  # Activate anaconda
 ```
+- You might need to use python3.6 because currently tensorflow doesn't support 3.7: `conda install python=3.6`. Otherwise please create a new conda environment with python=3.6.
 - Then let's run the commands in the above usage section.
 - After you run `$ python server.py`, you can access the system via `http://ec2-XX-XX-XXX-XXX.us-west-2.compute.amazonaws.com:5000`
 - (Advanced) If you'd like to deploy the system properly, please consider to run the Sis with the usual web server, e.g., uWSGI + nginx.
