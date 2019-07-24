@@ -15,6 +15,7 @@
 ## Links
 - [Demo](http://www.simple-image-search.xyz/)
 - [Project page](http://yusukematsui.me/project/sis/sis.html)
+- [Tutorial](https://ourcodeworld.com/articles/read/981/how-to-implement-an-image-search-engine-using-keras-tensorflow-with-python-3-in-ubuntu-18-04) and [Video](https://www.youtube.com/watch?v=Htu7b8PUyRg) by [@sdkcarlos](https://github.com/sdkcarlos)
 
 ## Usage
 ```bash
