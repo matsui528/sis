@@ -1,14 +1,13 @@
-import glob
-import os
-import pickle
 from PIL import Image
 from feature_extractor import FeatureExtractor
+from pathlib import Path
+import numpy as np
 
-fe = FeatureExtractor()
+if __name__ == '__main__':
+    fe = FeatureExtractor()
 
-for img_path in sorted(glob.glob('static/img/*.jpg')):
-    print(img_path)
-    img = Image.open(img_path)  # PIL image
-    feature = fe.extract(img)
-    feature_path = 'static/feature/' + os.path.splitext(os.path.basename(img_path))[0] + '.pkl'
-    pickle.dump(feature, open(feature_path, 'wb'))
+    for img_path in sorted(Path("./static/img").glob("*.jpg")):
+        print(img_path)  # e.g., ./static/img/xxx.jpg
+        feature = fe.extract(img=Image.open(img_path))
+        feature_path = Path("./static/feature") / (img_path.stem + ".npy")  # e.g., ./static/feature/xxx.npy
+        np.save(feature_path, feature)

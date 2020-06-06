@@ -1,8 +1,6 @@
 static/*
-!static/feature
-!static/img
-!static/uploaded
-!.gitkeep
+.idea
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
