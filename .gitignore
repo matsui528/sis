@@ -4,6 +4,9 @@ static/*
 !static/uploaded
 !.gitkeep
 
+.idea
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
