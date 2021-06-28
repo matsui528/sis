@@ -1,7 +1,7 @@
 # Simple Image Search Engine
 
 
-## [Demo](http://www.simple-image-search.xyz/)
+## [Demo](https://qtm8sx2ncy.ap-northeast-1.awsapprunner.com/)
 ![](http://yusukematsui.me/project/sis/img/screencapture2.jpg)
 
 ## Workflow
@@ -40,13 +40,14 @@ python offline.py
 python server.py
 ```
 
-## Advanced: Launch on AWS EC2
+## Advanced: Launch on AWS
 - You can easily launch the search engine server on AWS EC2. Please first open the port 5000 and launch an EC2 instance. Note that you need to create a security group such that the port 5000 is opened.
 - A middle-level CPU instance is sufficient, e.g., m5.large.
 - After you log-in to the instance by ssh, please setup the python environment (e.g., by [anaconda](https://docs.anaconda.com/anaconda/install/linux/)).
 - Run `offline.py` and `server.py`.
 - After you run `python server.py`, you can access the server from your browser via something like `http://ec2-XX-XX-XXX-XXX.us-west-2.compute.amazonaws.com:5000`
 - (Advanced) If you'd like to deploy the system in a secure way, please consider running the search engine with the usual web server, e.g., uWSGI + nginx.
+- (Advanced) If you want to deploy the system serverlessly, [AWS AppRunner](https://docs.aws.amazon.com/apprunner/latest/dg/what-is-apprunner.html) is the way to go.
 
 
 ## Citation
